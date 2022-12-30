@@ -81,6 +81,11 @@ public class RNDeviceManagerModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void startLockTask(Promise promise) {
+    startLockTaskWith(null, promise);
+  }
+
+  @ReactMethod
   public void RebootDevice(Promise promise) {
     try {
       Activity mActivity = getCurrentActivity();
