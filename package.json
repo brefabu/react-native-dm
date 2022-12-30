@@ -1,0 +1,19 @@
+
+{
+  "name": "react-native-dm",
+  "description": "A react native module for Managing Devices.",
+  "author": "brefabu",
+  "version": "1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/brefabu/react-native-dm"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react-native"
+  ]
+}
