@@ -94,7 +94,7 @@ public class RNDeviceManagerModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void Reboot(Promise promise) {
+  public void reboot(Promise promise) {
     try {
       Activity mActivity = getCurrentActivity();
 
@@ -116,7 +116,7 @@ public class RNDeviceManagerModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void Lock(Promise promise) {
+  public void lock(Promise promise) {
     try {
       Activity mActivity = getCurrentActivity();
 
