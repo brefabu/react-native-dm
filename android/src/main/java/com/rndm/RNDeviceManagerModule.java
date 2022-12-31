@@ -94,15 +94,16 @@ public class RNDeviceManagerModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void rebootDevice(Promise promise) {
+  public void reboot(Promise promise) {
     try {
       Activity mActivity = getCurrentActivity();
 
       if (mActivity != null) {
         DevicePolicyManager myDevicePolicyManager = (DevicePolicyManager) mActivity.getSystemService(Context.DEVICE_POLICY_SERVICE);
+        ComponentName mDPM = new ComponentName(mActivity, MyAdmin.class);
 
         if (myDevicePolicyManager.isDeviceOwnerApp(mActivity.getPackageName())) {
-          myDevicePolicyManager.reboot();
+          myDevicePolicyManager.reboot(mDPM);
           promise.resolve(REBOOT_DEVICE);
         } else {
         promise.reject(PERMISSION_NONEXISTENT, "Activity gone or mismatch");
@@ -116,7 +117,7 @@ public class RNDeviceManagerModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void lockDevice(Promise promise) {
+  public void lock(Promise promise) {
     try {
       Activity mActivity = getCurrentActivity();
 
