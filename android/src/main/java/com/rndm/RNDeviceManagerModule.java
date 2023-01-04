@@ -141,7 +141,9 @@ public class RNDeviceManagerModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void update(String url, Promise promise) {
     try {
-      PackageUpdater.downloadPackage(getApplicationContext(), url, "app.apk");
+      Context appCtx = getApplicationContext();
+
+      PackageUpdater.downloadPackage(appCtx, url, "app.apk");
     } catch (Exception e) {
       promise.reject(e);
     }
