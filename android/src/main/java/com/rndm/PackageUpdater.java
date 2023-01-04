@@ -1,4 +1,4 @@
-package com.app.devicemanager;
+package com.rndm;
 
 import android.app.PendingIntent;
 import android.app.admin.DeviceAdminReceiver;
