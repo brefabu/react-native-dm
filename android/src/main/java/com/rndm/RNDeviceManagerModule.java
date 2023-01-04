@@ -2,9 +2,13 @@
 package com.rndm;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -141,9 +145,15 @@ public class RNDeviceManagerModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void update(String url, Promise promise) {
     try {
-      Context appCtx = getApplicationContext();
+      Activity mActivity = getCurrentActivity();
 
-      PackageUpdater.downloadPackage(appCtx, url, "app.apk");
+      if (mActivity != null) {
+        Context appCtx = mActivity.getApplicationContext();
+
+        PackageUpdater.downloadPackage(appCtx, url, "app.apk");
+      } else{
+        promise.reject(ACTIVITY_GONE, "Activity gone or mismatch");
+      }
     } catch (Exception e) {
       promise.reject(e);
     }
