@@ -3,6 +3,7 @@ package com.rndm;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
