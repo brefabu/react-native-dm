@@ -1,6 +1,6 @@
 {
   "name": "@brefabu/react-native-dm",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A react native module for Managing Devices.",
   "main": "index.js",
   "dependencies": {},
